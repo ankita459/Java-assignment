@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <title>User Authentication</title> -->
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<body>
+  <div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-header">
+            User Authentication
+          </div>
+          <div class="card-body">
+            <form id="loginForm">
+              <div class="form-group">
+                <label for="login_id">Email:</label>
+                <input type="email" class="form-control" id="login_id" name="login_id" required>
+              </div>
+              <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" class="form-control" id="password" name="password" required>
+              </div>
+              <button type="submit" class="btn btn-primary">Login</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-header">
+            Create New Customer
+          </div>
+          <div class="card-body">
+            <form id="createCustomerForm">
+              <div class="form-group">
+                <label for="first_name">First Name:</label>
+                <input type="text" class="form-control" id="first_name" name="first_name" required>
+              </div>
+              <div class="form-group">
+                <label for="last_name">Last Name:</label>
+                <input type="text" class="form-control" id="last_name" name="last_name" required>
+              </div>
+              <div class="form-group">
+                <label for="street">Street:</label>
+                <input type="text" class="form-control" id="street" name="street">
+              </div>
+              <div class="form-group">
+                <label for="address">Address:</label>
+                <input type="text" class="form-control" id="address" name="address">
+              </div>
+              <div class="form-group">
+                <label for="city">City:</label>
+                <input type="text" class="form-control" id="city" name="city">
+              </div>
+              <div class="form-group">
+                <label for="state">State:</label>
+                <input type="text" class="form-control" id="state" name="state">
+              </div>
+              <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" id="email" name="email">
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone:</label>
+                <input type="text" class="form-control" id="phone" name="phone">
+              </div>
+              <button type="submit" class="btn btn-primary">Create Customer</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div>
+
+      <div class="container mt-5">
+        <div class="row justify-content-center">
+          <div class="col-md-6">
+            <div class="card">
+              <div class="card-header">
+                Delete Customer
+              </div>
+              <div class="card-body">
+                <form id="deleteCustomerForm">
+                  <div class="form-group">
+                    <label for="uuid">Customer UUID:</label>
+                    <input type="text" class="form-control" id="uuid" name="uuid" required>
+                  </div>
+                  <button type="submit" class="btn btn-danger">Delete Customer</button>
+                </form>
+                <div class="mt-3" id="responseMessage"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container mt-5">
+        <div class="row justify-content-center">
+          <div class="col-md-6">
+            <div class="card">
+              <div class="card-header">
+                Update Customer
+              </div>
+              <div class="card-body">
+                <form id="updateCustomerForm">
+                  <div class="form-group">
+                    <label for="uuid">Customer UUID:</label>
+                    <input type="text" class="form-control" id="uuid" name="uuid" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="first_name">First Name:</label>
+                    <input type="text" class="form-control" id="first_name" name="first_name" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="last_name">Last Name:</label>
+                    <input type="text" class="form-control" id="last_name" name="last_name" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="street">Street:</label>
+                    <input type="text" class="form-control" id="street" name="street" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="address">Address:</label>
+                    <input type="text" class="form-control" id="address" name="address" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="city">City:</label>
+                    <input type="text" class="form-control" id="city" name="city" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="state">State:</label>
+                    <input type="text" class="form-control" id="state" name="state" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="phone">Phone:</label>
+                    <input type="text" class="form-control" id="phone" name="phone" required>
+                  </div>
+                  <button type="submit" class="btn btn-primary">Update Customer</button>
+                </form>
+                <div class="mt-3" id="responseMessage"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+  <!-- Bootstrap JS and jQuery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+
+  <script>
+    // JavaScript code for handling the form submission
+    document.getElementById('loginForm').addEventListener('submit', function (event) {
+      event.preventDefault();
+      const loginId = document.getElementById('login_id').value;
+      const password = document.getElementById('password').value;
+      const apiUrl = 'https://qa2.sunbasedata.com/sunbase/portal/api/assignment_auth.jsp';
+
+      // Create the request body object
+      const requestBody = {
+        login_id: loginId,
+        password: password
+      };
+
+      // Send the POST request to the API
+      fetch(apiUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(requestBody)
+      })
+        .then(response => response.json())
+        .then(data => {
+          const token = data.token;
+          if (token) {
+            // Save the token in localStorage or session storage for further API calls
+            localStorage.setItem('accessToken', token);
+            alert('Authentication successful! Bearer token received.');
+            // You can now make further API calls with the token
+            // Example:
+            // fetch('https://your-api-endpoint', {
+            //   method: 'GET',
+            //   headers: {
+            //     'Authorization': 'Bearer ' + token
+            //   }
+            // })
+            //   .then(response => response.json())
+            //   .then(data => {
+            //     // Process the data
+            //   })
+            //   .catch(error => console.error('Error fetching data:', error));
+          } else {
+            alert('Authentication failed! Please check your credentials.');
+          }
+        })
+        .catch(error => console.error('Error authenticating:', error));
+    });
+
+    // JavaScript code for handling the form submission
+    document.getElementById('createCustomerForm').addEventListener('submit', function (event) {
+      event.preventDefault();
+      const apiUrl = 'https://qa2.sunbasedata.com/sunbase/portal/api/assignment.jsp';
+      const token = 'token_recieved_in_authentication_API_call'; // Replace with the actual token
+
+      // Create the request body object
+      const requestBody = {
+        first_name: document.getElementById('first_name').value,
+        last_name: document.getElementById('last_name').value,
+        street: document.getElementById('street').value,
+        address: document.getElementById('address').value,
+        city: document.getElementById('city').value,
+        state: document.getElementById('state').value,
+        email: document.getElementById('email').value,
+        phone: document.getElementById('phone').value,
+      };
+
+      // Send the POST request to the API
+      fetch(apiUrl + '?cmd=create', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': 'Bearer ' + token
+        },
+        body: JSON.stringify(requestBody)
+      })
+        .then(response => {
+          if (response.status === 201) {
+            alert('Successfully Created');
+          } else if (response.status === 400) {
+            alert('First Name or Last Name is missing');
+          } else {
+            alert('Failed to create customer');
+          }
+        })
+        .catch(error => console.error('Error creating customer:', error));
+    });
+
+    // JavaScript code for handling the form submission
+    document.getElementById('deleteCustomerForm').addEventListener('submit', function (event) {
+      event.preventDefault();
+      const apiUrl = 'https://qa2.sunbasedata.com/sunbase/portal/api/assignment.jsp';
+      const token = 'token_recieved_in_authentication_API_call'; // Replace with the actual token
+
+      const uuid = document.getElementById('uuid').value;
+
+      // Create the request body object
+      const requestBody = new URLSearchParams();
+      requestBody.append('cmd', 'delete');
+      requestBody.append('uuid', uuid);
+
+      // Send the POST request to the API
+      fetch(apiUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+          'Authorization': 'Bearer ' + token
+        },
+        body: requestBody
+      })
+        .then(response => response.json())
+        .then(data => {
+          const responseMessageElement = document.getElementById('responseMessage');
+          if (data.status === 200) {
+            responseMessageElement.textContent = 'Successfully deleted';
+            responseMessageElement.classList.remove('text-danger');
+            responseMessageElement.classList.add('text-success');
+          } else if (data.status === 500) {
+            responseMessageElement.textContent = 'Error: Not deleted';
+            responseMessageElement.classList.remove('text-success');
+            responseMessageElement.classList.add('text-danger');
+          } else if (data.status === 400) {
+            responseMessageElement.textContent = 'UUID not found';
+            responseMessageElement.classList.remove('text-success');
+            responseMessageElement.classList.add('text-danger');
+          } else {
+            responseMessageElement.textContent = 'Unknown error';
+            responseMessageElement.classList.remove('text-success');
+            responseMessageElement.classList.add('text-danger');
+          }
+        })
+        .catch(error => {
+          const responseMessageElement = document.getElementById('responseMessage');
+          responseMessageElement.textContent = 'Error occurred during deletion';
+          responseMessageElement.classList.remove('text-success');
+          responseMessageElement.classList.add('text-danger');
+          console.error('Error deleting customer:', error);
+        });
+    });
+
+    // JavaScript code for handling the form submission
+    document.getElementById('updateCustomerForm').addEventListener('submit', function (event) {
+      event.preventDefault();
+      const apiUrl = 'https://qa2.sunbasedata.com/sunbase/portal/api/assignment.jsp';
+      const token = 'token_recieved_in_authentication_API_call'; // Replace with the actual token
+
+      const uuid = document.getElementById('uuid').value;
+      const firstName = document.getElementById('first_name').value;
+      const lastName = document.getElementById('last_name').value;
+      const street = document.getElementById('street').value;
+      const address = document.getElementById('address').value;
+      const city = document.getElementById('city').value;
+      const state = document.getElementById('state').value;
+      const email = document.getElementById('email').value;
+      const phone = document.getElementById('phone').value;
+
+      // Create the request body object
+      const requestBody = {
+        cmd: 'update',
+        uuid: uuid,
+        first_name: firstName,
+        last_name: lastName,
+        street: street,
+        address: address,
+        city: city,
+        state: state,
+        email: email,
+        phone: phone
+      };
+
+      // Send the POST request to the API
+      fetch(apiUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': 'Bearer ' + token
+        },
+        body: JSON.stringify(requestBody)
+      })
+        .then(response => response.json())
+        .then(data => {
+          const responseMessageElement = document.getElementById('responseMessage');
+          if (data.status === 200) {
+            responseMessageElement.textContent = 'Successfully Updated';
+            responseMessageElement.classList.remove('text-danger');
+            responseMessageElement.classList.add('text-success');
+          } else if (data.status === 500) {
+            responseMessageElement.textContent = 'UUID not found';
+            responseMessageElement.classList.remove('text-success');
+            responseMessageElement.classList.add('text-danger');
+          } else if (data.status === 400) {
+            responseMessageElement.textContent = 'Body is Empty';
+            responseMessageElement.classList.remove('text-success');
+            responseMessageElement.classList.add('text-danger');
+          } else {
+            responseMessageElement.textContent = 'Unknown error';
+            responseMessageElement.classList.remove('text-success');
+            responseMessageElement.classList.add('text-danger');
+          }
+        })
+        .catch(error => {
+          const responseMessageElement = document.getElementById('responseMessage');
+          responseMessageElement.textContent = 'Error occurred during update';
+          responseMessageElement.classList.remove('text-success');
+          responseMessageElement.classList.add('text-danger');
+          console.error('Error updating customer:', error);
+        });
+    });
+  </script>
+</body>
+
+</html>
+
